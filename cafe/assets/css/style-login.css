@@ -1,0 +1,57 @@
+.panel {
+	width: 360px;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	padding: 0px;
+}
+
+.panel-login {
+    box-shadow: none !important;
+    webkit-box-shadow: none !important;
+}
+
+.panel-red > .panel-heading {
+    border-color: #49210B;
+    color: #fff;
+    background-color: #49210B;
+    text-align: center;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel-title {
+    margin: 4px 0px;
+    font-size: 20px;
+    color: inherit;
+}
+
+.panel-body {
+    padding: 40px 20px;
+}
+
+.btn-login {
+	text-align: center;
+}
+
+.label-login {
+    color: #49210b;
+}
+
+.login {
+    background-color: #49210B;
+    border-color: #49210B;
+    color: white;
+}
+
+.btn:hover {
+    color: white;
+}

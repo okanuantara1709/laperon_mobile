@@ -1,0 +1,391 @@
+@font-face {
+  font-family: 'Tillana';
+  src: url('../fonts/Tillana-Regular.ttf');
+}
+
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+}
+
+body{
+	background-color: #EEEEEE;
+}
+
+.no-pad{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.wrapper {
+	position: relative;
+	min-height: 100%;
+}
+
+.img-logo {
+    margin-top: 65px;
+    padding: 20px;
+}
+
+header{
+	color:white;
+	font-size: 20px;
+	position: relative;
+	z-index: 10;
+}
+.container-fluid{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.header-left{	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #49210B;
+	
+}
+
+.header-right {
+    padding: 3px 15px;
+    background-color: #543018;
+}
+
+.header-right a {
+	color: #fff;
+	font-size: 16px;
+}
+
+.side-bar-bg {
+	background-color: #936333;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.side-bar{
+	color:#fff;
+	padding-left: 0px;
+	padding-right: 0px;
+	position: relative;
+	z-index: 10;
+}
+
+.side-title{
+	background-color: #311000;
+	padding: 10px 15px;
+	color: #FFF;
+	font-size: 17px;
+}
+
+ul.side-menu{
+	margin-top: 10px;
+	padding-left: 0px;
+	float: none;
+
+}
+
+ul.side-menu li{
+	float: left;
+	width: 100%;
+}
+
+ul.side-menu li:hover{
+	background-color: #7D532B;
+}
+
+ul.side-menu li a{
+	color: #fff;
+	float: left;
+	width: 225px;
+	font-size: 14px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.gaji {
+	color: #b8c7ce !important;
+	float: left !important;
+	width: 225px !important;
+	font-size: 14px !important;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+	color: white !important;
+}
+
+.laporan {
+	color: #b8c7ce !important;
+	float: left !important;
+	width: 225px !important;
+	font-size: 14px !important;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+	color: white !important;
+}
+
+ul.side-menu li a span{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+ul.side-menu li a:hover{
+	text-decoration: none;
+}
+
+ul.side-menu li a i{
+	margin-right: 7px;
+}
+
+.treeview ul{
+	display: none;
+	padding-left: 0px;
+	background-color: #936333;
+	float: left;
+}
+
+.treeview.active ul{
+	display: block;
+	width: 100%;
+}
+
+.treeview.active a{
+	color:#fff;
+}
+
+.treeview ul li{
+	padding-left: 0px;
+	float: left;
+	width: 100%;
+}
+
+.treeview ul li a{
+	padding-left: 25px;
+	width: 100%;
+	float: left;
+}
+
+.main-content{
+	background-color: #eee;
+	min-height: 600px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.box{
+	background-color: #fff;
+	border-radius: 3px;
+	width: 100%;
+	float: left;
+	border-top: 3px solid #fff;
+}
+
+.box-header{
+	padding: 15px 15px;
+	border-bottom: 1px solid #eee;
+	color: #333;
+	width: 100%;
+	float: left;
+
+}
+
+.box-header h3{
+	font-size: 18px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.box-header h4 {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+.box-header ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.box-body{
+	width: 100%;
+	float: left;
+	min-height: 100px;
+	padding: 15px;
+
+}
+
+.box-body h4 {
+	text-align: center;
+	margin-bottom: 20px;
+	line-height: 1.6;
+}
+
+.box-info{
+	border-top-color: #543018;
+}
+
+.box-footer{
+	width: 100%;
+	float: left;
+	padding: 15px;
+	border-top: 1px solid #eee;
+}
+
+.filter-bulan{
+	float: left;
+	width: 150px;
+	margin-right: 15px;
+}
+
+.filter-bln{
+	width: 30%;
+}
+
+.filter-tahun{
+	font-size: 16px;
+	position: relative;	
+	float: left;
+	width: 100px;
+	margin-right: 20px;
+}
+
+.nm-akun {
+	padding-left: 25px;
+}
+
+.menu-laporan button:hover {
+    color: #543018;
+    background: #543018;
+    background: #936333;
+    color: #fff;
+}
+
+.menu-laporan button {
+    border: 1px solid #795548;
+    background: #fff;
+    box-shadow: 0 4px 5px 0 rgba(153,107,91,.38),0 1px 10px 0 rgba(153,107,91,.12),0 2px 4px -1px rgba(153,107,91,.2);
+    width: 90%;
+    padding: 10px 0;
+    font-size: 92px;
+    margin: 25px auto 0;
+    transition: .6s;
+}
+
+.menu-laporan .text-lp {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: ;
+    margin: 10px auto 10px;
+}
+
+.no-transaksi {
+	font-weight: bold;
+	float: right;
+	margin: 0px 120px 0px 0px;
+}
+
+.tgl {
+	width: 20%;
+}
+
+.input-transaksi {
+	width: 33.333%;
+	float: left;
+	padding: 15px 10px 5px 10px;
+}
+
+.tambah {
+	float: right;
+	margin-right: 10px;
+}
+
+.judul-laba-rugi {
+	text-align: center;
+}
+
+.judul-perubahan-modal {
+	text-align: center;
+}
+
+.total {
+	padding-left: 25px;
+}
+
+.coa {
+	padding-left: 25px;
+}
+
+.input-gaji {
+	width: 25%;
+}
+
+.btn-cek {
+	padding: 10px 0px 0px 0px;
+}
+
+.midle {
+	vertical-align: middle !important;
+	text-align: center;
+}
+
+.tgl-bayar {
+	float: left;
+	width: 100%;
+}
+
+.nik {
+	width: 30%;
+}
+
+.profile-title {
+    font-size: 23px !important;
+}
+
+.sistem-title {
+    padding: 10px !important;
+    left: 410px;
+}
+
+.logo {
+    text-align: center;
+    padding: 30px 0px 20px 0px;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: inherit !important;
+}
+
+.dashboard-main {
+	/*padding: 15px 10px;*/
+}
+
+.dashboard-title {
+	text-align: center;
+	margin-bottom: 0; 
+	padding-bottom: 0; 
+	font-weight: bold; 
+	font-size: 16px;
+}
+
+.dashboard-icon i {
+	font-size: 21px;
+}
+
+.dashboard-icon {
+	font-weight: 600;
+}
+
+.dashboard-qoute {
+	font-family: 'Tillana', cursive; 
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 25px;
+}
