@@ -11,6 +11,35 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','admin\DashboardController@index')->name('admin.dashboard.index');
+
+Route::group(['namespace' => 'Admin','prefix' => 'admin'],function(){
+    //auth login
+    Route::get('/login','Auth\\LoginController@showLoginForm')->name('admin.auth.login');
+    Route::post('/login','Auth\\LoginController@login')->name('admin.auth.login');
+    Route::get('/logout','Auth\\LoginController@logout')->name('admin.auth.logout');
+
+    Route::middleware('auth:admin')->group(function(){
+        Route::get('/dashboard','DashboardController@index')->name('dashboard.index');    
+    
+        // Route::get('//pegawai','PegawaiController@index')->name('admin_pegawai_index');
+        Route::resources([
+            '/user' => 'UserController'
+        ]);
+
+        Route::resources([
+            'vaksin' => 'VaksinController'
+        ]);
+    
+        Route::resources([
+            '/orang_tua' => 'OrangTuaController'
+        ]);
+
+        Route::resources([
+            '/bayi' => 'BayiController'
+        ]);
+        Route::get('/bayi/{id}/create_data','BayiController@createData')->name('admin.bayi.createData');
+        Route::post('/bayi/storeData','BayiController@storeData')->name('admin.bayi.storeData');
+        
+    });
 });
