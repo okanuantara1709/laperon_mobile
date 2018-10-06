@@ -43,47 +43,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tbody>                                                                                       
+                                    <tbody>  
                                         <tr>
-                                            <td>Nama</td>
+                                            <td>Properti</td>
+                                            <td>:</td>
+                                            <td>{{$data->properti->nama_properti}}</td>
+                                        </tr>                                                                                     
+                                        <tr>
+                                            <td>Nama Pemohon</td>
                                             <td>:</td>
                                             <td>{{$data->nama}}</td>
-                                        </tr>
+                                        </tr> 
                                         <tr>
-                                            <td>Alamat</td>
+                                            <td>Email Pemohon</td>
                                             <td>:</td>
-                                            <td>{{$data->alamat}}</td>
-                                        </tr>
+                                            <td>{{$data->email}}</td>
+                                        </tr> 
                                         <tr>
-                                            <td>Pekerjaan</td>
+                                            <td>Telepon Pemohon</td>
                                             <td>:</td>
-                                            <td>{{$data->pekerjaan}}</td>
-                                        </tr>
+                                            <td>{{$data->telepon}}</td>
+                                        </tr>  
                                         <tr>
-                                            <td>Tempat Lahir</td>
+                                            <td>Pesan</td>
                                             <td>:</td>
-                                            <td>{{$data->tempat_lahir}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tanggal Lahir</td>
-                                            <td>:</td>
-                                            <td>{{$data->tgl_lahir}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Pendidikan</td>
-                                            <td>:</td>
-                                            <td>{{$data->pendidikan}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Golongan Darah</td>
-                                            <td>:</td>
-                                            <td>{{$data->golongan_darah}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Agama</td>
-                                            <td>:</td>
-                                            <td>{{$data->agama}}</td>
-                                        </tr>
+                                            <td>{{$data->pesan}}</td>
+                                        </tr>                                        
                                     </tbody>
                                 </tbody>
                             </table>

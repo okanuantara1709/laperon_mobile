@@ -18,6 +18,7 @@ class CreatePemesananTable extends Migration
             $table->string('nama');
             $table->string('email');
             $table->string('telepon');
+            $table->text('pesan');
             $table->integer('properti_id')->unsigned();
             $table->timestamps();
 

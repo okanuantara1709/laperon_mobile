@@ -110,17 +110,10 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                        </ul>
+                    <li class="">
+                        <a href="{{route('dashboard.index')}}">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>                            
+                        </a>                        
                     </li>
 
                     {{-- //menentukan hak akses user --}}
@@ -135,13 +128,23 @@
 
                     {{-- //menentukan hak akses user --}}
                     @access(Operator)
-                        <li class="{{$template->menu == 'bayi' ? 'active' : ''}}">
+                        <li class="{{$template->menu == 'properti' ? 'active' : ''}}">
                             <a href="{{route('properti.index')}}"  >
                                 <i class="fa fa-bank"></i> 
                                 <span>Properti</span>
                             </a>
                         </li>   
-                    @endaccess   
+                    @endaccess 
+                    
+                    {{-- //menentukan hak akses user --}}
+                    @access(Operator)
+                        <li class="{{$template->menu == 'pemesanan' ? 'active' : ''}}">
+                            <a href="{{route('pemesanan.index')}}"  >
+                                <i class="fa fa-envelope"></i> 
+                                <span>Pesan</span>
+                            </a>
+                        </li>   
+                    @endaccess 
                     
                     {{-- //menentukan hak akses user --}}
                     @access(Admin)

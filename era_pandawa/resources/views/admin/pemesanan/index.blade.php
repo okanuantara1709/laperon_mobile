@@ -23,17 +23,15 @@
                     <div class="box box-info">
                         <div class="box-header">
                             <h3 class="box-title"><i class="{{$template->icon}}"></i> List {{$template->title}}</h3>
-                            <a href="{{route("$template->route".'.create')}}" class="btn btn-primary pull-right">
-                                <i class="fa fa-pencil"></i> Tambah {{$template->title}}
-                            </a>
+                            
                         </div>
                         <div class="box-body">
                             <table class="table" id="datatables">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Vaksin</th>  
-                                        <th>Kategori</th>                                      
+                                        <th>Nama Pengunjung</th> 
+                                        <th>Properti</th>                                        
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -41,10 +39,10 @@
                                     @foreach($data as $key => $row)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{$row->nama_vaksin}}</td>  
-                                            <td>{{$row->kategori}}</td>                                           
+                                            <td>{{$row->nama}}</td>
+                                            <td>{{$row->properti->nama_properti}}</td>                                            
                                             <td>
-                                                <a href="{{route("$template->route".'.edit',[$row->id])}}" class="btn btn-success btn-sm">Ubah</a>
+                                                
                                                 <a href="{{route("$template->route".'.show',[$row->id])}}" class="btn btn-info btn-sm">Lihat</a>
                                             </td>
                                         </tr>

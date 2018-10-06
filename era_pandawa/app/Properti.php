@@ -13,6 +13,10 @@ class Properti extends Model
         return $this->hasMany('App\Foto');
     }
 
+    public function fotoDepan(){
+        return $this->hasOne('App\Foto');
+    }
+
     public function kategori(){
         return $this->belongsTo('App\Kategori');
     }

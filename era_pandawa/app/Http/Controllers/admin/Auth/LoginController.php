@@ -36,7 +36,7 @@ class LoginController extends Controller
             if ($request->has('redirect')) {
                 return redirect($request->redirect);
             }
-            return redirect()->intended(route('admin.dashboard.index'));
+            return redirect()->intended(route('dashboard.index'));
         }else {
             Alert::make('danger','Pastikan username dan password benar.');
             return back();

@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Hash;
 use App\Helpers\Alert;
 use App\Helpers\Render;
 use App\User;
-use App\Vaksin;
+use App\Pemesanan;
 
-class VaksinController extends Controller
+class PemesananController extends Controller
 {
 
     private $template = [
-        'title' => 'Vaksin',
-        'route' => 'vaksin',
-        'menu' => 'vaksin',        
+        'title' => 'Pemesanan',
+        'route' => 'pemesanan',
+        'menu' => 'pemesanan',        
         'icon' => 'fa fa-user'
     ]; 
     
@@ -36,7 +36,7 @@ class VaksinController extends Controller
         ];
 
         return $form = [
-            ['label' => 'Nama Vaksin','name' => 'nama_vaksin'],
+            ['label' => 'Nama Pemesanan','name' => 'nama_pemesanan'],
             ['label' => 'Kategori','name' => 'kategori','type' =>'select','option' => $kategori],
             ['label' => 'Bulan 0','name' => 'bulan_0','type' => 'select','option' => $jadwal],
             ['label' => 'Bulan 1','name' => 'bulan_1','type' => 'select','option' => $jadwal],
@@ -57,45 +57,45 @@ class VaksinController extends Controller
     public function index()
     {
         $template = (object) $this->template;
-        $data = Vaksin::all();
-        // resources/views/admin/vaksin/index.blade.php
-        return view('admin.vaksin.index',compact('template','data'));
+        $data = Pemesanan::all();
+        // resources/views/admin/pemesanan/index.blade.php
+        return view('admin.pemesanan.index',compact('template','data'));
     }
     
     public function create()
     {
         $template = (object) $this->template;
         $form = $this->form();
-        return view('admin.vaksin.create',compact('template','form'));
+        return view('admin.pemesanan.create',compact('template','form'));
     }
 
    
     public function store(Request $request)
     {        
         $data = $request->all();
-        Vaksin::create($data);
+        Pemesanan::create($data);
 
         Alert::make('success','Berhasil simpan data');
-        return redirect(route('vaksin.index'));
+        return redirect(route('pemesanan.index'));
     }
 
     
     public function show($id)
     {
-        $data = Vaksin::find($id);
+        $data = Pemesanan::find($id);
         // dd($data->nama);
         $template = (object) $this->template;
-        return view('admin.vaksin.show',compact('template','data'));
+        return view('admin.pemesanan.show',compact('template','data'));
     }
 
     
     public function edit($id)
     {
-        $data = Vaksin::find($id);
+        $data = Pemesanan::find($id);
         // dd($data->nama);
         $template = (object) $this->template;
         $form = $this->form();
-        return view('admin.vaksin.edit',compact('template','form','data'));
+        return view('admin.pemesanan.edit',compact('template','form','data'));
     }
 
     
@@ -103,9 +103,9 @@ class VaksinController extends Controller
     {
         
         $data = $request->all();
-        Vaksin::find($id)->update($data);
+        Pemesanan::find($id)->update($data);
         Alert::make('success','Berhasil ubah data');
-        return redirect(route('vaksin.index'));
+        return redirect(route('pemesanan.index'));
     }
 
    

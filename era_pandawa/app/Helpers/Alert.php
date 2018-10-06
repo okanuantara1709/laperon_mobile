@@ -43,4 +43,14 @@ class Alert
             ";
         }
     }
+
+    public static function showAlert(){
+        if(self::has()){
+            return "
+            <script>
+                alert('".self::msg()."');
+            </script>
+            ";
+        }
+    }
 }

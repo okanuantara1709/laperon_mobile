@@ -1,0 +1,48 @@
+
+.header{
+    position: relative;    
+}
+
+.layout{
+    position: absolute;
+    background-color: rgba(215, 206, 206, 0.7);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layout-wrapper .img-box{
+    align-self: center;
+}
+
+.produk{
+    padding-bottom: 20px;
+}
+
+.produk-title{
+    font-size: 20px
+}
+.produk-price{
+    font-size: 17px;
+    color: #929292;
+}
+.produk-desc{
+    color:#938e8e;
+}
+.produk-text{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer{
+    color: #fff;   
+    padding-bottom: 20px;
+    padding-top:20px;
+    background-color: #484141;
+    margin-top:30px;
+}

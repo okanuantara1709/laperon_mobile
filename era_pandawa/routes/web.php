@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/','admin\DashboardController@index')->name('admin.dashboard.index');
+Route::get('/','HomeController@index')->name('home.index');
+Route::get('/contact','HomeController@contact')->name('home.contact');
+Route::get('/{id}/show','HomeController@show')->name('home.show');
+Route::post('/store','HomeController@store')->name('home.store');
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin'],function(){
     //auth login
@@ -27,12 +30,14 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin'],function(){
             '/user' => 'UserController'
         ]);
 
-        Route::resources([
-            'vaksin' => 'VaksinController'
-        ]);
+       
     
         Route::resources([
             '/kategori' => 'KategoriController'
+        ]);
+
+         Route::resources([
+            '/pemesanan' => 'PemesananController'
         ]);
 
         Route::resources([
