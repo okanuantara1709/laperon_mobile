@@ -49,6 +49,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            <a href="{{route("$template->route".".print")}}" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
                         </div>
                     </div>
                 </div>

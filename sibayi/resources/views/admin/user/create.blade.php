@@ -33,7 +33,7 @@
                         <div class="box-header">
                             <h3 class="box-title"><i class="{{$template->icon}}"></i> Form Tambah {{$template->title}}</h3>                            
                         </div>
-                        <form action="{{route("$template->route".".store")}}" method="POST">
+                        <form action="{{route("$template->route".".store")}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="box-body">                            
                                 @foreach($form as $value)

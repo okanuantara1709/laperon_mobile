@@ -43,6 +43,7 @@ class UserController extends Controller
             ['label' => 'Role','name' => 'role','type' => 'select','option' => $role],
             ['label' => 'Email','name' => 'email','type' => 'email'],
             ['label' => 'Password','name' => 'password','type' => 'password'],
+            ['label' => 'Foto','name' => 'foto','type' => 'file'],
         ]; 
     }
     
@@ -71,6 +72,11 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = Hash::make($request->password);
         $data['status'] = 1;
+
+        $file = $request->file('foto');
+        $data['foto'] = $file->getClientOriginalName();
+        $request->file('foto')->move("image/", $file->getClientOriginalName());
+
         User::create($data);
 
         Alert::make('success','Berhasil simpan data');
@@ -111,6 +117,13 @@ class UserController extends Controller
             $data['password'] = Hash::make($request->password);
         }
 
+        if($request->file('foto') !== null){
+            $file = $request->file('foto');
+            $data['foto'] = $file->getClientOriginalName();
+            $request->file('foto')->move("image/", $file->getClientOriginalName());
+        }
+        
+        // dd($data);
         User::find($id)->update($data);
         Alert::make('success','Berhasil ubah data');
         return redirect(route('user.index'));

@@ -166,4 +166,12 @@ class BayiController extends Controller
         Alert::make('success','Berhasil simpan data');
         return redirect(route('bayi.show',[$request->bayi_id]));
     }
+
+    public function print(){
+        $data = Bayi::all();
+        $page = view('admin.bayi.print')->with(['data' => $data]);
+        $mpdf = new \Mpdf\Mpdf();
+        $mpdf->WriteHTML($page);
+        $mpdf->Output();
+    }
 }

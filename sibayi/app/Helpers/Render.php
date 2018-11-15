@@ -18,6 +18,7 @@ class Render
 	private $hideAdd = false;
 	private $hideEdit = false;
 	private $method;
+	private $attr;
 
 
 	/**
@@ -46,6 +47,22 @@ class Render
 			if(($self->method == 'add' && $self->hideAdd == false) || ($self->method == 'edit' && $self->hideEdit == false)){
 				return $self->datepicker($data);
 			}
+		}else if($self->type == "textarea"){
+			if(($self->method == 'add' && $self->hideAdd == false) || ($self->method == 'edit' && $self->hideEdit == false)){
+				return $self->textarea($data);
+			}
+		}else if($self->type == "ckeditor"){
+			if(($self->method == 'add' && $self->hideAdd == false) || ($self->method == 'edit' && $self->hideEdit == false)){
+				return $self->ckeditor($data);
+			}
+		}else if($self->type == "map"){
+			if(($self->method == 'add' && $self->hideAdd == false) || ($self->method == 'edit' && $self->hideEdit == false)){
+				return $self->map($data);
+			}
+		}else if($self->type == "file"){
+			if(($self->method == 'add' && $self->hideAdd == false) || ($self->method == 'edit' && $self->hideEdit == false)){
+				return $self->file($data);
+			}
 		}
 	}
 	
@@ -66,7 +83,93 @@ class Render
         return "
 			<div class='form-group'>
 				<label for=\"$this->name\">$this->label</label>
-				<input type=\"$this->type\" $this->required id=\"$this->name\" name=\"$this->name\" class=\"form-control\" placeholder=\"$this->placeholder\" value=\"".$value."\">    	
+				<input type=\"$this->type\" $this->required id=\"$this->name\" name=\"$this->name\" class=\"form-control\" placeholder=\"$this->placeholder\" value=\"".$value."\" $this->attr>    	
+			</div>
+        ";
+	}
+
+	public function file($data){	
+		// dd($data);
+		$this->required = ($this->required == "required") ? "required='required'" : "";
+		if($data == null){
+			if($this->value == ""){
+				$value = old("$this->name");
+			}else{
+				$value = $this->value;
+			}
+		}else{
+			$value = $data->{$this->name};
+		}
+
+        return "
+			<div class='form-group'>
+				<label for=\"$this->name\">$this->label</label>
+				<input type=\"$this->type\" $this->required id=\"$this->name\" name=\"$this->name\" class=\"\" placeholder=\"$this->placeholder\" value=\"".$value."\">    	
+			</div>
+        ";
+	}
+
+	public function textarea($data){	
+		// dd($data);
+		$this->required = ($this->required == "required") ? "required='required'" : "";
+		if($data == null){
+			if($this->value == ""){
+				$value = old("$this->name");
+			}else{
+				$value = $this->value;
+			}
+		}else{
+			$value = $data->{$this->name};
+		}
+
+        return "
+			<div class='form-group'>
+				<label for=\"$this->name\">$this->label</label>
+				<textarea ' type=\"$this->type\" $this->required id=\"$this->name\" name=\"$this->name\" class=\"form-control\">$value</textarea>    	
+			</div>
+        ";
+	}
+
+	public function ckeditor($data){	
+		// dd($data);
+		$this->required = ($this->required == "required") ? "required='required'" : "";
+		if($data == null){
+			if($this->value == ""){
+				$value = old("$this->name");
+			}else{
+				$value = $this->value;
+			}
+		}else{
+			$value = $data->{$this->name};
+		}
+
+        return "
+			<div class='form-group'>
+				<label for=\"$this->name\">$this->label</label>
+				<textarea id='ckeditor' type=\"$this->type\" $this->required id=\"$this->name\" name=\"$this->name\" class=\"form-control ckeditor\">$value</textarea>    	
+			</div>
+        ";
+	}
+
+	public function map($data){	
+		// dd($data);
+		$this->required = ($this->required == "required") ? "required='required'" : "";
+		if($data == null){
+			if($this->value == ""){
+				$value = old("$this->name");
+			}else{
+				$value = $this->value;
+			}
+		}else{
+			$value = $data->{$this->name};
+		}
+
+        return "
+			<div class='form-group'>							
+				<label for=\"$this->name\">$this->label</label>
+				<div id='google_map' style='height:400px;'></div>
+				<input type='hidden' readonly name='lat' class='lat col-sm-6'/>
+				<input type='hidden' readonly name='lng' class='lng col-sm-6'/>    	
 			</div>
         ";
 	}
@@ -176,7 +279,6 @@ class Render
         return "<select name=\"".$name."[$id]\" id=\"formulir_$id\" class=\"form-control m-input\">$opt</select>$help";
         
 	}
-	
 	
 }
 ?>

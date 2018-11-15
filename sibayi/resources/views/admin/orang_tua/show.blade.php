@@ -84,6 +84,11 @@
                                             <td>:</td>
                                             <td>{{$data->agama}}</td>
                                         </tr>
+                                        <tr>
+                                            <td>Telepon</td>
+                                            <td>:</td>
+                                            <td>{{$data->telepon}}</td>
+                                        </tr>
                                     </tbody>
                                 </tbody>
                             </table>

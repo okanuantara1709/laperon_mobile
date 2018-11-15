@@ -52,6 +52,7 @@ class OrangTuaController extends Controller
             ['label' => 'Jenis Kelamin','name' => 'jenis_kelamin','type' => 'select','option' => $jenis_kelamin],
             ['label' => 'Golongan Darah','name' => 'golongan_darah','type' =>'select','option'=> $gol_darah],
             ['label' => 'Agama','name' => 'agama','type' =>'select','option'=>$agama],
+            ['label' => 'Telepon','name' => 'telepon','type' => 'text'],
         ]; 
     }
     
@@ -101,13 +102,21 @@ class OrangTuaController extends Controller
 
     
     public function update(Request $request, $id)
-    {
-        
+    {        
         $data = $request->all();
         OrangTua::find($id)->update($data);
         Alert::make('success','Berhasil ubah data');
         return redirect(route('orang_tua.index'));
     }
+
+    public function print(){
+        $data = OrangTua::all();
+        $page = view('admin.orang_tua.print')->with(['data' => $data]);
+        $mpdf = new \Mpdf\Mpdf();
+        $mpdf->WriteHTML($page);
+        $mpdf->Output();
+    }
+    
 
    
     public function destroy($id)

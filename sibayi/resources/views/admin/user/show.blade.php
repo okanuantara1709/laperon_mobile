@@ -74,6 +74,11 @@
                                             <td>:</td>
                                             <td>{{$data->status == 1 ? 'Aktif' : 'Tidak Aktif'}}</td>
                                         </tr>
+                                        <tr>
+                                            <td>Foto</td>
+                                            <td>:</td>
+                                            <td><img src="{{asset('image/'.$data->foto)}}" width="300px" alt=""/></td>
+                                        </tr>
                                     </tbody>
                                 </tbody>
                             </table>
